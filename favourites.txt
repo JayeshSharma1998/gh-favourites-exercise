@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 Pizza
 Burger
 Fries
 Pasta
+=======
+Interstellar
+Inception
+K3G
+Thapad
+>>>>>>> movies
