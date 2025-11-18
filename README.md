@@ -1,4 +1,6 @@
+```mermaid
 flowchart TD
+    A --> B
 
     %% STYLE
     classDef aws fill=#232F3E,stroke=#fff,stroke-width=1px,color=#fff
