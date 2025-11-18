@@ -1,6 +1,4 @@
-```mermaid
 flowchart TD
-    A --> B
     TMDB[TMDB API]
     Lambda[AWS Lambda Ingestion Function]
     RawLake[Raw Data Lake (S3)]
@@ -18,4 +16,3 @@ flowchart TD
     DBT -->|Materialized Models| Warehouse
     Warehouse -->|Query Warehouse| Athena
     Athena -->|Dataset| QuickSight
-
