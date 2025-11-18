@@ -1,6 +1,5 @@
 ```mermaid
 flowchart TD
-    A --> B
 
     TMDB[TMDB API]
     Lambda[AWS Lambda Ingestion Function]
