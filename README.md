@@ -1,6 +1,4 @@
-```mermaid
 flowchart TD
-
     TMDB[TMDB API]
     Lambda[AWS Lambda Ingestion Function]
     RawLake[Raw Data Lake (S3)]
