@@ -1,4 +1,4 @@
-flowchart TD
+```flowchart TD
     %% Nodes
     TMDB[TMDB API] 
     Lambda[AWS Lambda Ingestion Function]
