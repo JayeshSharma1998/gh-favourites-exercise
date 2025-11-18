@@ -1,4 +1,6 @@
-```flowchart TD
+```mermaid
+flowchart TD
+    A --> B
     %% Nodes
     TMDB[TMDB API] 
     Lambda[AWS Lambda Ingestion Function]
