@@ -1,18 +1,20 @@
 flowchart TD
-    TMDB[TMDB API]
+    %% Nodes
+    TMDB[TMDB API] 
     Lambda[AWS Lambda Ingestion Function]
-    RawLake[Raw Data Lake (S3)]
+    S3Raw[Raw Data Lake (Amazon S3)]
     Glue[AWS Glue Data Catalog]
     Athena[Amazon Athena SQL Engine]
-    DBT[DBT Transformations]
-    Warehouse[Curated Data Warehouse (S3)]
+    DBT[DBT Transformations (ELT)]
+    S3Warehouse[Curated Data Warehouse (Amazon S3)]
     QuickSight[Amazon QuickSight Dashboard]
 
+    %% Flows
     TMDB -->|Fetch JSON| Lambda
-    Lambda -->|Write Raw JSON| RawLake
-    RawLake -->|Schema Crawler| Glue
-    Glue -->|Table Metadata| Athena
+    Lambda -->|Write Raw JSON| S3Raw
+    S3Raw -->|Schema Crawler| Glue
+    Glue --> Athena
     Athena -->|Query Raw Tables| DBT
-    DBT -->|Materialized Models| Warehouse
-    Warehouse -->|Query Warehouse| Athena
+    DBT -->|Materialized Models| S3Warehouse
+    S3Warehouse -->|Query Warehouse| Athena
     Athena -->|Dataset| QuickSight
